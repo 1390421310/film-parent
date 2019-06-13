@@ -3,6 +3,10 @@
 	<name>film-parent</name>
 	<comment></comment>
 	<projects>
+		<project>film-dubbo-service</project>
+		<project>film-dubbo-service-impl</project>
+		<project>film-management</project>
+		<project>film-pojo</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
