@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://code.alibabatech.com/schema/dubbo 
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:application name="film-dubbo-service"/>	
+	
+	<dubbo:registry address="192.168.126.131:2181" protocol="zookeeper"></dubbo:registry>
+	
+	<dubbo:protocol name="dubbo" port="20880"></dubbo:protocol>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.SysUsersDubboService" ref="sysUsersDubboServiceImpl"></dubbo:service>
+	<bean id="sysUsersDubboServiceImpl" class="com.zh.dubbo.service.impl.SysUsersDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.UsersDubboService" ref="usersDubboServiceImpl"></dubbo:service>
+	<bean id="usersDubboServiceImpl" class="com.zh.dubbo.service.impl.UsersDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.CategoryDubboService" ref="categoryDubboServiceImpl"></dubbo:service>
+	<bean id="categoryDubboServiceImpl" class="com.zh.dubbo.service.impl.CategoryDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.CityDubboService" ref="cityDubboServiceImpl"></dubbo:service>
+	<bean id="cityDubboServiceImpl" class="com.zh.dubbo.service.impl.CityDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.CinemaDubboService" ref="cinemaDubboServiceImpl"></dubbo:service>
+	<bean id="cinemaDubboServiceImpl" class="com.zh.dubbo.service.impl.CinemaDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.RoomDubboService" ref="roomDubboServiceImpl"></dubbo:service>
+	<bean id="roomDubboServiceImpl" class="com.zh.dubbo.service.impl.RoomDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.PhotoDubboService" ref="photoDubboServiceImpl"></dubbo:service>
+	<bean id="photoDubboServiceImpl" class="com.zh.dubbo.service.impl.PhotoDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.FilmHotDubboService" ref="filmHotDubboServiceImpl"></dubbo:service>
+	<bean id="filmHotDubboServiceImpl" class="com.zh.dubbo.service.impl.FilmHotDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.CommentDubboService" ref="commentDubboServiceImpl"></dubbo:service>
+	<bean id="commentDubboServiceImpl" class="com.zh.dubbo.service.impl.CommentDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.FilmComingDubboService" ref="filmComingDubboServiceImpl"></dubbo:service>
+	<bean id="filmComingDubboServiceImpl" class="com.zh.dubbo.service.impl.FilmComingDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.OrderDubboService" ref="orderDubboServiceImpl"></dubbo:service>
+	<bean id="orderDubboServiceImpl" class="com.zh.dubbo.service.impl.OrderDubboServiceImpl"></bean>
+	<!-- 注册服务 -->
+	<dubbo:service interface="com.zh.dubbo.service.AccordDubboService" ref="accordDubboServiceImpl"></dubbo:service>
+	<bean id="accordDubboServiceImpl" class="com.zh.dubbo.service.impl.AccordDubboServiceImpl"></bean>
+	<!-- 同时把spring配置文件也加载 -->
+	<import resource="../../applicationContext.xml"/>
+</beans>
+
